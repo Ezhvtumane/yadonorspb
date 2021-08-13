@@ -15,7 +15,11 @@ public class Application {
     public static void main(String[] args) throws IOException {
         Document doc = Jsoup.connect("http://yadonorspb.ru/svetofor/").get();
         final Elements elements = doc.select("th");
-
+        //doc.getElementsByClass("spk-lights__item").first().getElementsByClass("spk-lights__group-item spk-lights__group-item--min").first().attributes()
+        //spk-lights__group-item--min min - mean red,
+        //spk-lights__group-item--middle middle - mean yellow,
+        //spk-lights__group-item--middle max - mean green,
+        //WTF!!??
         final List<String> bloodGroups = parsePageForBloodTypes(elements);
 
         if (bloodGroups.size() > 4) {
